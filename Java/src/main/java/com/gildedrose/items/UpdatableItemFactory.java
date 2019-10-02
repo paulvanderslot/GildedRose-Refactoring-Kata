@@ -1,19 +1,32 @@
 package com.gildedrose.items;
 
+import java.util.Optional;
+
 import com.gildedrose.Item;
 
 public class UpdatableItemFactory {
 
+    private UpdatableItemFactory() {
+    }
+
     public static UpdatableItem create(Item item) {
-        switch (item.name) {
-            case SpecialItemNames.AGED_BRIE:
+        Optional<SpecialItemType> specialItemType = SpecialItemType.forName(item.name);
+        if (specialItemType.isPresent()) {
+            return createSpecialItem(specialItemType.get(), item);
+        }
+        return new BasicItem(item);
+    }
+
+    private static UpdatableItem createSpecialItem(SpecialItemType specialItemType, Item item) {
+        switch (specialItemType) {
+            case AGED_BRIE:
                 return new AgedBrieItem(item);
-            case SpecialItemNames.SULFURAS:
+            case SULFURAS:
                 return new SulfurasItem(item);
-            case SpecialItemNames.BACKSTAGE_PASSES:
+            case BACKSTAGE_PASSES:
                 return new BackStagePassesItem(item);
             default:
-                return new BasicItem(item);
+                throw new IllegalStateException("Special item not implemented: " + specialItemType);
         }
     }
 }
