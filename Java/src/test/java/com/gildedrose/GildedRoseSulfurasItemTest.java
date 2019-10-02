@@ -4,9 +4,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;
 
+import com.gildedrose.items.SpecialItemNames;
+
 public class GildedRoseSulfurasItemTest {
 
-    private static final int STARTING_QUALITY = 20;
+    private static final int STARTING_QUALITY = 80;
     private static final int STARTING_SELL_IN = 30;
 
     @Test

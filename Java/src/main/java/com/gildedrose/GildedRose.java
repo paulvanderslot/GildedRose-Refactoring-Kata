@@ -1,5 +1,7 @@
 package com.gildedrose;
 
+import com.gildedrose.items.SpecialItemNames;
+
 class GildedRose {
     private static final int FIRST_SELL_IN_LIMIT_FOR_INCREASED_BACKSTAGE_PASS_QUALITY = 10;
     private static final int SECOND_SELL_IN_LIMIT_FOR_INCREASED_BACKSTAGE_PASS_QUALITY = 5;

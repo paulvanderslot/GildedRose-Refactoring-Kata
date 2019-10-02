@@ -4,6 +4,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;
 
+import com.gildedrose.items.SpecialItemNames;
+
 public class GildedRoseAgedBrieItemTest {
 
     private static final int STARTING_QUALITY = 20;
