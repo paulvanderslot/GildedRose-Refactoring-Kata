@@ -4,14 +4,29 @@ import com.gildedrose.Item;
 
 class BackStagePassesItem implements UpdatableItem {
 
+    private static final int FIRST_SELL_IN_LIMIT_FOR_INCREASED_QUALITY = 10;
+    private static final int SECOND_SELL_IN_LIMIT_FOR_INCREASED_QUALITY = 5;
+
+    private final Item item;
+
     BackStagePassesItem(Item item) {
-        // TODO Auto-generated constructor stub
+        this.item = item;
     }
 
     @Override
     public void update() {
-        // TODO Auto-generated method stub
+        decreaseSellIn(item);
 
+        increaseQuality(item);
+        if (item.sellIn <= FIRST_SELL_IN_LIMIT_FOR_INCREASED_QUALITY) {
+            increaseQuality(item);
+        }
+        if (item.sellIn <= SECOND_SELL_IN_LIMIT_FOR_INCREASED_QUALITY) {
+            increaseQuality(item);
+        }
+        if (item.sellIn < 0) {
+            item.quality = 0;
+        }
     }
 
 }

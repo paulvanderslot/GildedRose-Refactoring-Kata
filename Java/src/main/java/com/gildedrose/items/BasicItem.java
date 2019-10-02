@@ -4,13 +4,20 @@ import com.gildedrose.Item;
 
 class BasicItem implements UpdatableItem {
 
+    private final Item item;
+
     BasicItem(Item item) {
-        // TODO Auto-generated constructor stub
+        this.item = item;
     }
 
     @Override
     public void update() {
-        // TODO Auto-generated method stub
+        decreaseSellIn(item);
+
+        decreaseQuality(item);
+        if (item.sellIn < 0) {
+            decreaseQuality(item);
+        }
     }
 
 }

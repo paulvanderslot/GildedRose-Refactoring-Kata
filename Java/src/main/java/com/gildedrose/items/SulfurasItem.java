@@ -5,13 +5,12 @@ import com.gildedrose.Item;
 class SulfurasItem implements UpdatableItem {
 
     SulfurasItem(Item item) {
-        // TODO Auto-generated constructor stub
+        // does nothing
     }
 
     @Override
     public void update() {
-        // TODO Auto-generated method stub
-
+        // does nothing
     }
 
 }

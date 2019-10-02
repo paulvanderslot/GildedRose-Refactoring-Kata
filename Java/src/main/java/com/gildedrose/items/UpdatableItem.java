@@ -4,16 +4,16 @@ import com.gildedrose.Item;
 
 public interface UpdatableItem {
 
-    public void update();
+    void update();
 
-    static void decreaseSellIn(Item item) {
+    default void decreaseSellIn(Item item) {
         item.sellIn = item.sellIn - 1;
     }
 
     /**
      * Item cannot increase above 50
      */
-    static void increaseQuality(Item item) {
+    default void increaseQuality(Item item) {
         if (item.quality < 50) {
             item.quality = item.quality + 1;
         }
@@ -22,7 +22,7 @@ public interface UpdatableItem {
     /**
      * Item cannot decrease below 0
      */
-    static void decreaseQuality(Item item) {
+    default void decreaseQuality(Item item) {
         if (item.quality > 0) {
             item.quality = item.quality - 1;
         }
