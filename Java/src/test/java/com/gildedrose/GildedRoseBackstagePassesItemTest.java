@@ -30,8 +30,8 @@ public class GildedRoseBackstagePassesItemTest {
     }
 
     @Test
-    void qualityIncreasesTwoWhenSellInIsBetween10And5() throws Exception {
-        int sellInLimitWhenQualityIncreasesTwo = 10;
+    void qualityIncreasesTwoWhenSellInBecomesBetween10And5() throws Exception {
+        int sellInLimitWhenQualityIncreasesTwo = 11;
         Item backstagePasses =
             new Item(SpecialItemNames.BACKSTAGE_PASSES, sellInLimitWhenQualityIncreasesTwo, STARTING_QUALITY);
         GildedRose gildedRose = new GildedRose(new Item[] { backstagePasses });
@@ -42,8 +42,8 @@ public class GildedRoseBackstagePassesItemTest {
     }
 
     @Test
-    void qualityIncreasesThreeWhenSellInIsBetween5And0() throws Exception {
-        int sellInLimitWhenQualityIncreasesThree = 5;
+    void qualityIncreasesThreeWhenSellInBecomesBetween5And0() throws Exception {
+        int sellInLimitWhenQualityIncreasesThree = 6;
         Item backstagePasses =
             new Item(SpecialItemNames.BACKSTAGE_PASSES, sellInLimitWhenQualityIncreasesThree, STARTING_QUALITY);
         GildedRose gildedRose = new GildedRose(new Item[] { backstagePasses });
