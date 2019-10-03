@@ -5,8 +5,8 @@ import static java.util.stream.Collectors.toList;
 import java.util.Arrays;
 import java.util.List;
 
-import com.gildedrose.items.UpdatableItem;
-import com.gildedrose.items.UpdatableItemFactory;
+import com.gildedrose.item.UpdatableItem;
+import com.gildedrose.item.UpdatableItemFactory;
 
 class GildedRose {
     private List<UpdatableItem> items;

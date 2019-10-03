@@ -1,8 +1,8 @@
-package com.gildedrose.items;
+package com.gildedrose.item;
 
 import com.gildedrose.Item;
 
-class BackStagePassesItem implements UpdatableItem {
+class BackStagePassesItem extends UpdatableItem {
 
     private static final int FIRST_SELL_IN_LIMIT_FOR_INCREASED_QUALITY = 10;
     private static final int SECOND_SELL_IN_LIMIT_FOR_INCREASED_QUALITY = 5;
@@ -28,5 +28,4 @@ class BackStagePassesItem implements UpdatableItem {
             item.quality = 0;
         }
     }
-
 }

@@ -1,8 +1,8 @@
-package com.gildedrose.items;
+package com.gildedrose.item;
 
 import com.gildedrose.Item;
 
-class BasicItem implements UpdatableItem {
+class BasicItem extends UpdatableItem {
 
     private final Item item;
 

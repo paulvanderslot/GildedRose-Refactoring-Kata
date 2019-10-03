@@ -1,4 +1,4 @@
-package com.gildedrose.items;
+package com.gildedrose.item;
 
 import java.util.Arrays;
 import java.util.Optional;

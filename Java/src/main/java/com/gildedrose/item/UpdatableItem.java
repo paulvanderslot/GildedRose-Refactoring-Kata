@@ -1,19 +1,19 @@
-package com.gildedrose.items;
+package com.gildedrose.item;
 
 import com.gildedrose.Item;
 
-public interface UpdatableItem {
+public abstract class UpdatableItem {
 
-    void update();
+    public abstract void update();
 
-    default void decreaseSellIn(Item item) {
+    protected final void decreaseSellIn(Item item) {
         item.sellIn = item.sellIn - 1;
     }
 
     /**
      * Item cannot increase above 50
      */
-    default void increaseQuality(Item item) {
+    protected final void increaseQuality(Item item) {
         if (item.quality < 50) {
             item.quality = item.quality + 1;
         }
@@ -22,7 +22,7 @@ public interface UpdatableItem {
     /**
      * Item cannot decrease below 0
      */
-    default void decreaseQuality(Item item) {
+    protected final void decreaseQuality(Item item) {
         if (item.quality > 0) {
             item.quality = item.quality - 1;
         }

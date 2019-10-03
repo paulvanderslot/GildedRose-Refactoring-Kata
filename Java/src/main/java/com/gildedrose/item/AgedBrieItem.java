@@ -1,8 +1,8 @@
-package com.gildedrose.items;
+package com.gildedrose.item;
 
 import com.gildedrose.Item;
 
-class AgedBrieItem implements UpdatableItem {
+class AgedBrieItem extends UpdatableItem {
 
     private final Item item;
 

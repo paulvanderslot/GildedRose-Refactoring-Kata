@@ -1,8 +1,8 @@
-package com.gildedrose.items;
+package com.gildedrose.item;
 
 import com.gildedrose.Item;
 
-class SulfurasItem implements UpdatableItem {
+class SulfurasItem extends UpdatableItem {
 
     SulfurasItem(Item item) {
         // does nothing
