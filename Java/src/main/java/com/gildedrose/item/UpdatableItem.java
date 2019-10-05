@@ -11,7 +11,7 @@ public abstract class UpdatableItem {
     }
 
     /**
-     * Item cannot increase above 50
+     * Item quality cannot increase above 50
      */
     protected final void increaseQuality(Item item) {
         if (item.quality < 50) {
@@ -20,7 +20,7 @@ public abstract class UpdatableItem {
     }
 
     /**
-     * Item cannot decrease below 0
+     * Item quality cannot decrease below 0
      */
     protected final void decreaseQuality(Item item) {
         if (item.quality > 0) {
