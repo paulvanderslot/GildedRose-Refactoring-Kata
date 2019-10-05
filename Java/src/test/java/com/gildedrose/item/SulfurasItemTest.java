@@ -1,10 +1,11 @@
 package com.gildedrose.item;
 
+import static com.gildedrose.item.UpdatableItemFactory.SpecialItemType.SULFURAS;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;
 
-import com.gildedrose.Item;
+import com.gildedrose.Item;;
 
 public class SulfurasItemTest {
 
@@ -12,8 +13,8 @@ public class SulfurasItemTest {
     private static final int STARTING_SELL_IN = 30;
 
     @Test
-    void sellInStaysTheSameAfterOneDay() throws Exception {
-        Item sulfuras = new Item(ItemType.SULFURAS.getName(), STARTING_SELL_IN, STARTING_QUALITY);
+    void sellInStaysTheSameAfterOneUpdate() throws Exception {
+        Item sulfuras = new Item(SULFURAS, STARTING_SELL_IN, STARTING_QUALITY);
         SulfurasItem updatableItem = new SulfurasItem(sulfuras);
 
         updatableItem.update();
@@ -22,8 +23,8 @@ public class SulfurasItemTest {
     }
 
     @Test
-    void qualityStaysTheSameAfterOneDay() throws Exception {
-        Item sulfuras = new Item(ItemType.SULFURAS.getName(), STARTING_SELL_IN, STARTING_QUALITY);
+    void qualityStaysTheSameAfterOneUpdate() throws Exception {
+        Item sulfuras = new Item(SULFURAS, STARTING_SELL_IN, STARTING_QUALITY);
         SulfurasItem updatableItem = new SulfurasItem(sulfuras);
 
         updatableItem.update();
@@ -33,7 +34,7 @@ public class SulfurasItemTest {
 
     @Test
     void qualityStaysTheSameWhenSellInIsNegatice() throws Exception {
-        Item sulfuras = new Item(ItemType.SULFURAS.getName(), -1, STARTING_QUALITY);
+        Item sulfuras = new Item(SULFURAS, -1, STARTING_QUALITY);
         SulfurasItem updatableItem = new SulfurasItem(sulfuras);
 
         updatableItem.update();

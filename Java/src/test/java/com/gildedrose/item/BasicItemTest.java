@@ -12,7 +12,7 @@ public class BasicItemTest {
     private static final int STARTING_SELL_IN = 30;
 
     @Test
-    public void sellInDecreasesOneAfterOneDay() {
+    public void sellInDecreasesOneAfterOneUpdate() {
         Item basicItem = new Item("basicItem", STARTING_SELL_IN, STARTING_QUALITY);
         BasicItem updatableItem = new BasicItem(basicItem);
 
@@ -22,7 +22,7 @@ public class BasicItemTest {
     }
 
     @Test
-    public void sellInDecreasesTwoAfterTwoDays() {
+    public void sellInDecreasesTwoAfterTwoUpdates() {
         Item basicItem = new Item("basicItem", STARTING_SELL_IN, STARTING_QUALITY);
         BasicItem updatableItem = new BasicItem(basicItem);
 
@@ -33,7 +33,7 @@ public class BasicItemTest {
     }
 
     @Test
-    public void qualityDecreasesOneAfterOneDay() {
+    public void qualityDecreasesOneAfterOneUpdate() {
         Item basicItem = new Item("basicItem", STARTING_SELL_IN, STARTING_QUALITY);
         BasicItem updatableItem = new BasicItem(basicItem);
 
@@ -43,7 +43,7 @@ public class BasicItemTest {
     }
 
     @Test
-    public void qualityDecreasesTwoAfterTwoDays() {
+    public void qualityDecreasesTwoAfterTwoUpdates() {
         Item basicItem = new Item("basicItem", STARTING_SELL_IN, STARTING_QUALITY);
         BasicItem updatableItem = new BasicItem(basicItem);
 

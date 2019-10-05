@@ -8,22 +8,25 @@ public class UpdatableItemFactory {
     }
 
     public static UpdatableItem create(Item item) {
-        ItemType itemType = ItemType.forName(item.name);
-        return createItem(itemType, item);
+        switch (item.name) {
+        case SpecialItemType.AGED_BRIE:
+            return new AgedBrieItem(item);
+        case SpecialItemType.SULFURAS:
+            return new SulfurasItem(item);
+        case SpecialItemType.BACKSTAGE_PASSES:
+            return new BackStagePassesItem(item);
+        default:
+            return new BasicItem(item);
+        }
     }
 
-    private static UpdatableItem createItem(ItemType itemType, Item item) {
-        switch (itemType) {
-        case AGED_BRIE:
-            return new AgedBrieItem(item);
-        case SULFURAS:
-            return new SulfurasItem(item);
-        case BACKSTAGE_PASSES:
-            return new BackStagePassesItem(item);
-        case BASIC_ITEM:
-            return new BasicItem(item);
-        default:
-            throw new IllegalStateException("Item type not implemented: " + itemType);
+    static class SpecialItemType {
+        static final String AGED_BRIE = "Aged Brie";
+        static final String SULFURAS = "Sulfuras, Hand of Ragnaros";
+        static final String BACKSTAGE_PASSES = "Backstage passes to a TAFKAL80ETC concert";
+        static final String CONJURED = null;
+
+        private SpecialItemType() {
         }
     }
 }

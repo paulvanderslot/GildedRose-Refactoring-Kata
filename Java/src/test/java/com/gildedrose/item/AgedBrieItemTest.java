@@ -1,5 +1,6 @@
 package com.gildedrose.item;
 
+import static com.gildedrose.item.UpdatableItemFactory.SpecialItemType.AGED_BRIE;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;
@@ -12,8 +13,8 @@ public class AgedBrieItemTest {
     private static final int STARTING_SELL_IN = 30;
 
     @Test
-    void sellInDecreasesOneAfterOneDay() throws Exception {
-        Item agedBrie = new Item(ItemType.AGED_BRIE.getName(), STARTING_SELL_IN, STARTING_QUALITY);
+    void sellInDecreasesOneAfterOneUpdate() throws Exception {
+        Item agedBrie = new Item(AGED_BRIE, STARTING_SELL_IN, STARTING_QUALITY);
         AgedBrieItem updatableItem = new AgedBrieItem(agedBrie);
 
         updatableItem.update();
@@ -22,8 +23,8 @@ public class AgedBrieItemTest {
     }
 
     @Test
-    void qualityIncreasesOneAfterOneDay() throws Exception {
-        Item agedBrie = new Item(ItemType.AGED_BRIE.getName(), STARTING_SELL_IN, STARTING_QUALITY);
+    void qualityIncreasesOneAfterOneUpdate() throws Exception {
+        Item agedBrie = new Item(AGED_BRIE, STARTING_SELL_IN, STARTING_QUALITY);
         AgedBrieItem updatableItem = new AgedBrieItem(agedBrie);
 
         updatableItem.update();
@@ -32,8 +33,8 @@ public class AgedBrieItemTest {
     }
 
     @Test
-    void qualityIncreasesTwoAfterTwoDays() throws Exception {
-        Item agedBrie = new Item(ItemType.AGED_BRIE.getName(), STARTING_SELL_IN, STARTING_QUALITY);
+    void qualityIncreasesTwoAfterTwoUpdates() throws Exception {
+        Item agedBrie = new Item(AGED_BRIE, STARTING_SELL_IN, STARTING_QUALITY);
         AgedBrieItem updatableItem = new AgedBrieItem(agedBrie);
 
         updatableItem.update();
@@ -44,7 +45,7 @@ public class AgedBrieItemTest {
 
     @Test
     void qualityIncreasesTwoWhenSellInIsNegative() throws Exception {
-        Item agedBrie = new Item(ItemType.AGED_BRIE.getName(), -1, STARTING_QUALITY);
+        Item agedBrie = new Item(AGED_BRIE, -1, STARTING_QUALITY);
         AgedBrieItem updatableItem = new AgedBrieItem(agedBrie);
 
         updatableItem.update();
@@ -54,7 +55,7 @@ public class AgedBrieItemTest {
 
     @Test
     void qualityCantBecomeMoreThan50WhenIncreasingOne() throws Exception {
-        Item agedBrie = new Item(ItemType.AGED_BRIE.getName(), STARTING_SELL_IN, 50);
+        Item agedBrie = new Item(AGED_BRIE, STARTING_SELL_IN, 50);
         AgedBrieItem updatableItem = new AgedBrieItem(agedBrie);
 
         updatableItem.update();
@@ -64,7 +65,7 @@ public class AgedBrieItemTest {
 
     @Test
     void qualityCantBecomeMoreThan50WhenIncreasingTwo() throws Exception {
-        Item agedBrie = new Item(ItemType.AGED_BRIE.getName(), -1, 49);
+        Item agedBrie = new Item(AGED_BRIE, -1, 49);
         AgedBrieItem updatableItem = new AgedBrieItem(agedBrie);
 
         updatableItem.update();
