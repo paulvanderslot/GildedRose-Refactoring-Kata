@@ -16,10 +16,10 @@ public class GildedRoseRegressionTest {
     void regressionTest() throws Exception {
         Item[] items = createItems();
         GildedRose app = new GildedRose(items);
-
         int days = 8;
 
         String gildedRoseOverview = giveOverview(items, app, days);
+
         String expected = readFileToString("regressionTestResult.txt");
         assertThat(expected).isEqualTo(gildedRoseOverview);
 
@@ -40,8 +40,7 @@ public class GildedRoseRegressionTest {
                 new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20),
                 new Item("Backstage passes to a TAFKAL80ETC concert", 10, 40),
                 new Item("Backstage passes to a TAFKAL80ETC concert", 5, 30),
-                // this conjured item does not work properly yet
-                new Item("Conjured Mana Cake", 3, 6) };
+                new Item("Conjured Mana Cake", 3, 11) };
     }
 
     private String giveOverview(Item[] items, GildedRose app, int days) {
