@@ -13,7 +13,7 @@ public class BackstagePassesItemTest {
 
     @Test
     void sellInDecreasesOneAfterOneDay() throws Exception {
-        Item backstagePasses = new Item(SpecialItemType.BACKSTAGE_PASSES.getName(), STARTING_SELL_IN, STARTING_QUALITY);
+        Item backstagePasses = new Item(ItemType.BACKSTAGE_PASSES.getName(), STARTING_SELL_IN, STARTING_QUALITY);
         BackStagePassesItem updatebleItem = new BackStagePassesItem(backstagePasses);
 
         updatebleItem.update();
@@ -23,7 +23,7 @@ public class BackstagePassesItemTest {
 
     @Test
     void qualityIncreasesOneAfterOneDay() throws Exception {
-        Item backstagePasses = new Item(SpecialItemType.BACKSTAGE_PASSES.getName(), STARTING_SELL_IN, STARTING_QUALITY);
+        Item backstagePasses = new Item(ItemType.BACKSTAGE_PASSES.getName(), STARTING_SELL_IN, STARTING_QUALITY);
         BackStagePassesItem updatebleItem = new BackStagePassesItem(backstagePasses);
 
         updatebleItem.update();
@@ -35,7 +35,7 @@ public class BackstagePassesItemTest {
     void qualityIncreasesTwoWhenSellInBecomesBetween10And5() throws Exception {
         int sellInLimitWhenQualityIncreasesTwo = 11;
         Item backstagePasses =
-            new Item(SpecialItemType.BACKSTAGE_PASSES.getName(), sellInLimitWhenQualityIncreasesTwo, STARTING_QUALITY);
+            new Item(ItemType.BACKSTAGE_PASSES.getName(), sellInLimitWhenQualityIncreasesTwo, STARTING_QUALITY);
         BackStagePassesItem updatebleItem = new BackStagePassesItem(backstagePasses);
 
         updatebleItem.update();
@@ -47,7 +47,7 @@ public class BackstagePassesItemTest {
     void qualityIncreasesThreeWhenSellInBecomesBetween5And0() throws Exception {
         int sellInLimitWhenQualityIncreasesThree = 6;
         Item backstagePasses =
-            new Item(SpecialItemType.BACKSTAGE_PASSES.getName(), sellInLimitWhenQualityIncreasesThree, STARTING_QUALITY);
+            new Item(ItemType.BACKSTAGE_PASSES.getName(), sellInLimitWhenQualityIncreasesThree, STARTING_QUALITY);
         BackStagePassesItem updatebleItem = new BackStagePassesItem(backstagePasses);
 
         updatebleItem.update();
@@ -59,7 +59,7 @@ public class BackstagePassesItemTest {
     void qualityDoesNotBecomeMoreThan50() throws Exception {
         int sellInLimitWhenQualityIncreasesThree = 5;
         Item backstagePasses =
-            new Item(SpecialItemType.BACKSTAGE_PASSES.getName(), sellInLimitWhenQualityIncreasesThree, 48);
+            new Item(ItemType.BACKSTAGE_PASSES.getName(), sellInLimitWhenQualityIncreasesThree, 48);
         BackStagePassesItem updatebleItem = new BackStagePassesItem(backstagePasses);
 
         updatebleItem.update();
@@ -69,7 +69,7 @@ public class BackstagePassesItemTest {
 
     @Test
     void qualityBecomesZeroWhenSellInIs0() throws Exception {
-        Item backstagePasses = new Item(SpecialItemType.BACKSTAGE_PASSES.getName(), 0, STARTING_QUALITY);
+        Item backstagePasses = new Item(ItemType.BACKSTAGE_PASSES.getName(), 0, STARTING_QUALITY);
         BackStagePassesItem updatebleItem = new BackStagePassesItem(backstagePasses);
 
         updatebleItem.update();
@@ -79,7 +79,7 @@ public class BackstagePassesItemTest {
 
     @Test
     void qualityBecomesZeroWhenSellInIsBelow0() throws Exception {
-        Item backstagePasses = new Item(SpecialItemType.BACKSTAGE_PASSES.getName(), -1, STARTING_QUALITY);
+        Item backstagePasses = new Item(ItemType.BACKSTAGE_PASSES.getName(), -1, STARTING_QUALITY);
         BackStagePassesItem updatebleItem = new BackStagePassesItem(backstagePasses);
 
         updatebleItem.update();

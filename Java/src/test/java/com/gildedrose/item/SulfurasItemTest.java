@@ -13,7 +13,7 @@ public class SulfurasItemTest {
 
     @Test
     void sellInStaysTheSameAfterOneDay() throws Exception {
-        Item sulfuras = new Item(SpecialItemType.SULFURAS.getName(), STARTING_SELL_IN, STARTING_QUALITY);
+        Item sulfuras = new Item(ItemType.SULFURAS.getName(), STARTING_SELL_IN, STARTING_QUALITY);
         SulfurasItem updatableItem = new SulfurasItem(sulfuras);
 
         updatableItem.update();
@@ -23,7 +23,7 @@ public class SulfurasItemTest {
 
     @Test
     void qualityStaysTheSameAfterOneDay() throws Exception {
-        Item sulfuras = new Item(SpecialItemType.SULFURAS.getName(), STARTING_SELL_IN, STARTING_QUALITY);
+        Item sulfuras = new Item(ItemType.SULFURAS.getName(), STARTING_SELL_IN, STARTING_QUALITY);
         SulfurasItem updatableItem = new SulfurasItem(sulfuras);
 
         updatableItem.update();
@@ -33,7 +33,7 @@ public class SulfurasItemTest {
 
     @Test
     void qualityStaysTheSameWhenSellInIsNegatice() throws Exception {
-        Item sulfuras = new Item(SpecialItemType.SULFURAS.getName(), -1, STARTING_QUALITY);
+        Item sulfuras = new Item(ItemType.SULFURAS.getName(), -1, STARTING_QUALITY);
         SulfurasItem updatableItem = new SulfurasItem(sulfuras);
 
         updatableItem.update();

@@ -1,7 +1,5 @@
 package com.gildedrose.item;
 
-import java.util.Optional;
-
 import com.gildedrose.Item;
 
 public class UpdatableItemFactory {
@@ -10,23 +8,22 @@ public class UpdatableItemFactory {
     }
 
     public static UpdatableItem create(Item item) {
-        Optional<SpecialItemType> specialItemType = SpecialItemType.forName(item.name);
-        if (specialItemType.isPresent()) {
-            return createSpecialItem(specialItemType.get(), item);
-        }
-        return new BasicItem(item);
+        ItemType itemType = ItemType.forName(item.name);
+        return createItem(itemType, item);
     }
 
-    private static UpdatableItem createSpecialItem(SpecialItemType specialItemType, Item item) {
-        switch (specialItemType) {
-            case AGED_BRIE:
-                return new AgedBrieItem(item);
-            case SULFURAS:
-                return new SulfurasItem(item);
-            case BACKSTAGE_PASSES:
-                return new BackStagePassesItem(item);
-            default:
-                throw new IllegalStateException("Special item not implemented: " + specialItemType);
+    private static UpdatableItem createItem(ItemType itemType, Item item) {
+        switch (itemType) {
+        case AGED_BRIE:
+            return new AgedBrieItem(item);
+        case SULFURAS:
+            return new SulfurasItem(item);
+        case BACKSTAGE_PASSES:
+            return new BackStagePassesItem(item);
+        case BASIC_ITEM:
+            return new BasicItem(item);
+        default:
+            throw new IllegalStateException("Item type not implemented: " + itemType);
         }
     }
 }
