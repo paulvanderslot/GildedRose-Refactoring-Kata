@@ -2,6 +2,7 @@ package com.gildedrose.item;
 
 import static com.gildedrose.item.UpdatableItemFactory.SpecialItemType.AGED_BRIE;
 import static com.gildedrose.item.UpdatableItemFactory.SpecialItemType.BACKSTAGE_PASSES;
+import static com.gildedrose.item.UpdatableItemFactory.SpecialItemType.CONJURED;
 import static com.gildedrose.item.UpdatableItemFactory.SpecialItemType.SULFURAS;
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -39,6 +40,15 @@ public class UpdatableItemTest {
         UpdatableItem updatableItem = UpdatableItemFactory.create(item);
 
         assertThat(updatableItem).isInstanceOf(SulfurasItem.class);
+    }
+
+    @Test
+    void conjuredNameCreatesAConjuredItem() throws Exception {
+        Item item = new Item(CONJURED, DEFAULT_SELL_IN, DEFAULT_QUALITY);
+
+        UpdatableItem updatableItem = UpdatableItemFactory.create(item);
+
+        assertThat(updatableItem).isInstanceOf(ConjuredItem.class);
     }
 
     @Test
