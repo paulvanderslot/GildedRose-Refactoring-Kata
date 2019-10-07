@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 
 import com.gildedrose.Item;
 
-public class UpdatableItemTest {
+public class UpdatableItemFactoryTest {
 
     private static final int DEFAULT_SELL_IN = 0;
     private static final int DEFAULT_QUALITY = 0;
